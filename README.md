@@ -5,7 +5,9 @@ of Canada (WSC) unit-value data, and generating hourly time series.
 
 ## Setup
 
-Use Python 3.10 or newer. From this repository:
+Use Python 3.10 or newer. The workflows and all 10 offline tests were checked
+with Python 3.11.14 and pandas 2.3.3. The supported pandas range is listed in
+`requirements.txt`. From this repository:
 
 ```bash
 python -m pip install -r requirements.txt
@@ -14,7 +16,8 @@ python -m pip install -r requirements.txt
 ## Three workflows
 
 Each workflow has editable settings at the top. The default demo uses one station,
-**02GB001, Grand River at Brantford**, and processes 2020. Everything runs in serial.
+**02GB001, Grand River at Brantford**. Workflows 1 and 3 process 2020; workflow 2
+downloads all available file segments for that station. Everything runs in serial.
 Paths are relative to the repository, regardless of where the script is launched.
 
 1. **Process daily HYDAT data.** Download and extract a [HYDAT SQLite database](https://www.canada.ca/en/environment-climate-change/services/water-overview/quantity/monitoring/survey/data-products-services/national-archive-hydat.html).
@@ -48,6 +51,10 @@ exports use `WATER_LEVEL`. Units are `m3/s` for discharge and `m` for stage.
 
 ## Processing rules
 
+Hourly series are calculated from WSC unit values using the aggregation rules
+below. The interpolation, gap limit, and coverage threshold determine which
+observations contribute to each hourly mean.
+
 - Daily values retain HYDAT date labels, missing values, negative values, and
   original data symbols. No time-zone conversion is applied.
 - Hourly means use linear interpolation and trapezoidal time integration between
@@ -79,6 +86,21 @@ tests/         small offline checks for the core processing rules
 ```bash
 python -m unittest discover -s tests -v
 ```
+
+## Citation
+
+Software citation metadata for version 1.0.0 is provided in
+[CITATION.cff](CITATION.cff). Please cite the archived software version used in
+your work. Before a version DOI is available, the repository citation is:
+
+Shen, H. (2026). *WSC hydrometric tools* (Version 1.0.0) [Computer software].
+[GitHub](https://github.com/hongren-shen/wsc-hydrometric-tools).
+
+Please also acknowledge Environment and Climate Change Canada, Water Survey of
+Canada, for the observations. Data citation examples and quality definitions
+are available in the [WSC FAQ](https://wateroffice.ec.gc.ca/contactus/faq_e.html).
+Record the HYDAT database version or unit-value download date when reporting
+results, because source observations can be updated.
 
 ## License and data source
 
