@@ -1,0 +1,27 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the archived version used in your work."
+type: software
+title: "WSC hydrometric tools"
+version: 1.0.0
+authors:
+  - family-names: Shen
+    given-names: Hongren
+    affiliation: University of Waterloo
+repository-code: "https://github.com/hongren-shen/wsc-hydrometric-tools"
+url: "https://github.com/hongren-shen/wsc-hydrometric-tools"
+license: MIT
+abstract: >-
+  Python workflows for processing daily HYDAT observations, downloading Water
+  Survey of Canada (WSC) unit-value data, and calculating hourly means for a
+  single station. The tools support discharge and water level, retain source
+  quality metadata in CSV outputs, and export observation time series in
+  Raven RVT format. Daily cross-checks against HYDAT screen suspect Grade
+  10/20 and approval-level records. Editable examples use station 02GB001,
+  Grand River at Brantford, Ontario.
+keywords:
+  - Water Survey of Canada
+  - HYDAT
+  - hydrometric data
+  - streamflow
+  - water level
+  - Raven
