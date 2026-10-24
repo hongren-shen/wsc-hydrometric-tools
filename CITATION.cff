@@ -3,6 +3,8 @@ message: "If you use this software, please cite the archived version used in you
 type: software
 title: "WSC hydrometric tools"
 version: 1.0.0
+doi: 10.5281/zenodo.23603573
+date-released: "2026-10-23"
 authors:
   - family-names: Shen
     given-names: Hongren

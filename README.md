@@ -174,13 +174,16 @@ python -m unittest discover -s tests -v
 
 ## Citation
 
-Software citation metadata for version 1.0.0 is provided in
-[CITATION.cff](CITATION.cff). For an archived code snapshot, cite its version DOI.
-When using GitHub code, also record the exact commit used. The repository
-citation is:
+Please cite the archived software version used in your work. Citation metadata
+is provided in [CITATION.cff](CITATION.cff):
 
-Shen, H. (2026). *WSC hydrometric tools* (Version 1.0.0) [Computer software].
-[GitHub](https://github.com/hongren-shen/wsc-hydrometric-tools).
+Shen, H. (2026). *WSC hydrometric tools*
+(Version v1.0.0) [Computer software]. Zenodo.
+[https://doi.org/10.5281/zenodo.23603573](https://doi.org/10.5281/zenodo.23603573)
+
+Source code and documentation are available on
+[GitHub](https://github.com/hongren-shen/wsc-hydrometric-tools). If you use changes
+not included in an archived release, also record the exact commit used.
 
 Please also acknowledge Environment and Climate Change Canada, Water Survey of
 Canada, for the observations. Data citation examples and quality definitions
